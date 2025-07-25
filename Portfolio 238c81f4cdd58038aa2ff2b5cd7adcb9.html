@@ -1,0 +1,690 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Portfolio</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="238c81f4-cdd5-8038-aa2f-f2b5cd7adcb9" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_2.png" style="object-position:center 19.999999999999996%"/><h1 class="page-title">Portfolio</h1><p class="page-description"></p></header><div class="page-body"><div id="238c81f4-cdd5-813a-8287-d4cd54f714e3" class="column-list"><div id="238c81f4-cdd5-8187-81c3-fec1ff72cb3d" style="width:16.666666666666664%" class="column"><figure id="238c81f4-cdd5-816f-a42e-f8d6d538e349" class="image"><a href="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/1600w-GwiHF3J6qRM.webp"><img style="width:230.15625px" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/1600w-GwiHF3J6qRM.webp"/></a></figure></div><div id="238c81f4-cdd5-8167-9ee1-ec00520a961b" style="width:58.33333333333333%" class="column"><h1 id="238c81f4-cdd5-8180-8f85-f31c10657aa5" class="">Hello, I’m Hamza Sabri !</h1><blockquote id="238c81f4-cdd5-8118-928b-c2540e232acc" class="">Your text about yourself<br/><br/><br/><br/><br/></blockquote><p id="238c81f4-cdd5-8137-9e26-c5e1cda791fb" class="">
+</p><p id="238c81f4-cdd5-801e-82bf-d9f08f7d1cf2" class="">
+</p></div><div id="238c81f4-cdd5-81fc-b35d-e994e6bdcaea" style="width:24.999999999999982%" class="column"><h2 id="238c81f4-cdd5-815d-983f-c825ad0e2acd" class=""><mark class="highlight-purple"><strong>2+</strong></mark></h2><p id="238c81f4-cdd5-815d-aea0-f4d9bb1690d9" class="">Years in design</p><h2 id="238c81f4-cdd5-8195-a099-c159dc058e72" class=""><mark class="highlight-purple"><strong>5+</strong></mark></h2><p id="238c81f4-cdd5-815f-895a-c1a6f28866df" class="">Projects</p><h2 id="238c81f4-cdd5-812e-8f26-d4aeecd11a0f" class=""></h2><p id="238c81f4-cdd5-8120-aad2-c6b07565c771" class="">
+</p><p id="238c81f4-cdd5-8174-aec9-f8c5490a85ff" class="">
+</p></div></div><h2 id="238c81f4-cdd5-81f3-9230-ebebb180009e" class="">Achievements and skills</h2><div id="238c81f4-cdd5-8144-82bc-c31b2578fa72" class="collection-content"><h4 class="collection-title">Skills</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar-month_gray.svg" style="width:14px;height:14px;display:block"/></span>Year</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/tag_gray.svg" style="width:14px;height:14px;display:block"/></span>Tag</th><th><span class="icon property-icon"><div data-testid="/icons/description_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/description_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/description_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Description</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>Featured</th><th><span class="icon property-icon"><div data-testid="/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/arrow-circle-down_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/arrow-circle-down_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Level </th><th><span class="icon property-icon"><div data-testid="/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/arrow-circle-down_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/arrow-circle-down_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Skill</th><th><span class="icon property-icon"><div data-testid="/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/arrow-circle-down_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/arrow-circle-down_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Type</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px;display:block"/></span>Type of activity</th></tr></thead><tbody><tr id="238c81f4-cdd5-81ed-be50-efce2072cd04"><td class="cell-title"><a href="https://www.notion.so/Figma-238c81f4cdd581edbe50efce2072cd04?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/Figma%20238c81f4cdd581edbe50efce2072cd04/figma-logo-E4E21D3AEA-seeklogo.com.png"/>Figma</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-yellow">Advanced</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-81ca-99f2-e7dcf3956279"><td class="cell-title"><a href="https://www.notion.so/Python-238c81f4cdd581ca99f2e7dcf3956279?pvs=21"><span class="icon">🐍</span>Python</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-yellow">Advanced</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-8148-a741-c80fb2c5f3a6"><td class="cell-title"><a href="https://www.notion.so/Illustrator-238c81f4cdd58148a741c80fb2c5f3a6?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/Illustrator%20238c81f4cdd58148a741c80fb2c5f3a6/Adobe_Illustrator_CC_icon.svg.png"/>Illustrator</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-blue">Сonfident</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-81f7-a1e0-c6c5dc96eb04"><td class="cell-title"><a href="https://www.notion.so/CorelDraw-238c81f4cdd581f7a1e0c6c5dc96eb04?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/CorelDraw%20238c81f4cdd581f7a1e0c6c5dc96eb04/coreldraw-2021.png"/>CorelDraw</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-blue">Сonfident</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-8196-be25-d69e909647c0"><td class="cell-title"><a href="https://www.notion.so/Sony-Vegas-Pro-238c81f4cdd58196be25d69e909647c0?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/Sony%20Vegas%20Pro%20238c81f4cdd58196be25d69e909647c0/images.png"/>Sony Vegas Pro</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-blue">Сonfident</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-81e1-8da7-f383723ad55c"><td class="cell-title"><a href="https://www.notion.so/Canva-238c81f4cdd581e18da7f383723ad55c?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/Canva%20238c81f4cdd581e18da7f383723ad55c/dfb96cc174513093cd6ed61489ccb750.svg"/>Canva</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-yellow">Advanced</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-818e-ba18-f7b33127565e"><td class="cell-title"><a href="https://www.notion.so/Paint-to-SAI-238c81f4cdd5818eba18f7b33127565e?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/Paint%20to%20SAI%20238c81f4cdd5818eba18f7b33127565e/easy_paint_tool_sai_logo_by_omar6d3epm9f.webp"/>Paint to SAI</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-blue">Сonfident</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-8117-a3c9-dfbf9fc0fdd5"><td class="cell-title"><a href="https://www.notion.so/Microsoft-Word-238c81f4cdd58117a3c9dfbf9fc0fdd5?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/Microsoft%20Word%20238c81f4cdd58117a3c9dfbf9fc0fdd5/Microsoft_Word_2013-2019_logo.svg.png"/>Microsoft Word</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-yellow">Advanced</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-816d-958d-e7a65d60d41c"><td class="cell-title"><a href="https://www.notion.so/PowerPoint-238c81f4cdd5816d958de7a65d60d41c?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/PowerPoint%20238c81f4cdd5816d958de7a65d60d41c/Microsoft_Office_PowerPoint_(2019present).svg.png"/>PowerPoint</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-yellow">Advanced</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-81a6-99e6-c220f3ed20be"><td class="cell-title"><a href="https://www.notion.so/Indesign-238c81f4cdd581a699e6c220f3ed20be?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/Indesign%20238c81f4cdd581a699e6c220f3ed20be/Adobe_InDesign_CC_icon.svg.png"/>Indesign</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-green">Basic</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-81ba-8e1a-cb45c6f18435"><td class="cell-title"><a href="https://www.notion.so/HTML-CSS-238c81f4cdd581ba8e1acb45c6f18435?pvs=21"><img class="icon" src="https://www.notion.so/icons/code_gray.svg"/>HTML/CSS</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-blue">Сonfident</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-8174-acca-f2e81e47797f"><td class="cell-title"><a href="https://www.notion.so/Tilda-238c81f4cdd58174accaf2e81e47797f?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/Tilda%20238c81f4cdd58174accaf2e81e47797f/images.png"/>Tilda</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-pink">Beginner</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-81f6-b8c6-caf91fde1f06"><td class="cell-title"><a href="https://www.notion.so/After-Effects-238c81f4cdd581f6b8c6caf91fde1f06?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/After%20Effects%20238c81f4cdd581f6b8c6caf91fde1f06/Adobe_After_Effects_CC_icon.svg.png"/>After Effects</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-pink">Beginner</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr><tr id="238c81f4-cdd5-818d-b211-d55cf0c540b2"><td class="cell-title"><a href="https://www.notion.so/TapTop-238c81f4cdd5818db211d55cf0c540b2?pvs=21"><img class="icon" src="Portfolio%20238c81f4cdd58038aa2ff2b5cd7adcb9/Skills%20238c81f4cdd5814482bcc31b2578fa72/TapTop%20238c81f4cdd5818db211d55cf0c540b2/download.png"/>TapTop</a></td><td class="cell-^\cx"></td><td class="cell-Q?xe"></td><td class="cell-IGQ["><div class="checkbox checkbox-off"></div></td><td class="cell-4a93c9f9-4ef3-4f5f-8f91-30bd64139989"><span class="selected-value select-value-color-pink">Beginner</span></td><td class="cell-J]T["></td><td class="cell-2c9c2ef8-768f-4283-989e-c5d4c509b8d0"><span class="selected-value select-value-color-default">Tools</span></td><td class="cell-VkUF"></td></tr></tbody></table><br/><br/></div><hr id="238c81f4-cdd5-8110-8061-c225888a38dd"/><div id="238c81f4-cdd5-8149-8917-d2fbe1607005" class="column-list"><div id="238c81f4-cdd5-81bd-802b-c49185f7ecf1" style="width:12.5%" class="column"><h2 id="238c81f4-cdd5-8145-85cb-c39d5b231133" class="">Best projects</h2><p id="238c81f4-cdd5-81f3-a009-c8227204388d" class="">The most voluminous and well-developed projects</p><p id="238c81f4-cdd5-81a7-ad3a-dad537d5a2c8" class="">
+</p></div><div id="238c81f4-cdd5-812d-ae6f-ff44f4aa73ba" style="width:87.5%" class="column"><div id="238c81f4-cdd5-816a-adb1-c2bb41a08323" class="collection-content"><h4 class="collection-title">Projects</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><div data-testid="/icons/font_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/font_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/font_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Name</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>Избранное</th><th><span class="icon property-icon"><div data-testid="/icons/description_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/description_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/description_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Описание</th><th><span class="icon property-icon"><div data-testid="/icons/list_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/list_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/list_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Теги</th><th><span class="icon property-icon"><div data-testid="/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/arrow-circle-down_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/arrow-circle-down_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Тип</th></tr></thead><tbody><tr id="238c81f4-cdd5-8141-80ee-fae4022df78b"><td class="cell-title"><a href="https://www.notion.so/HydroFlaskPro-238c81f4cdd5814180eefae4022df78b?pvs=21">HydroFlaskPro</a></td><td class="cell-[:fq"><div class="checkbox checkbox-on"></div></td><td class="cell-DmC\"></td><td class="cell-o=j&gt;"></td><td class="cell-S]gz"><span class="selected-value select-value-color-gray">Motion</span></td></tr><tr id="238c81f4-cdd5-8165-9440-c891af74c9be"><td class="cell-title"><a href="https://www.notion.so/PulseGuard-238c81f4cdd581659440c891af74c9be?pvs=21">PulseGuard</a></td><td class="cell-[:fq"><div class="checkbox checkbox-on"></div></td><td class="cell-DmC\"></td><td class="cell-o=j&gt;"></td><td class="cell-S]gz"><span class="selected-value select-value-color-gray">Motion</span></td></tr><tr id="238c81f4-cdd5-8181-8a06-f417feb1bc9c"><td class="cell-title"><a href="https://www.notion.so/Project-2-Arts-238c81f4cdd581818a06f417feb1bc9c?pvs=21">Project 2 Arts</a></td><td class="cell-[:fq"><div class="checkbox checkbox-on"></div></td><td class="cell-DmC\"></td><td class="cell-o=j&gt;"><span class="selected-value select-value-color-green">2024</span><span class="selected-value select-value-color-blue">Photoshop</span></td><td class="cell-S]gz"><span class="selected-value select-value-color-gray">Printing</span></td></tr><tr id="238c81f4-cdd5-81c7-aaae-ce83b0f4d2d9"><td class="cell-title"><a href="https://www.notion.so/Project-1-Graphics-238c81f4cdd581c7aaaece83b0f4d2d9?pvs=21">Project 1 Graphics</a></td><td class="cell-[:fq"><div class="checkbox checkbox-on"></div></td><td class="cell-DmC\"></td><td class="cell-o=j&gt;"><span class="selected-value select-value-color-green">2025</span><span class="selected-value select-value-color-blue">Photoshop</span></td><td class="cell-S]gz"><span class="selected-value select-value-color-gray">Arts</span></td></tr><tr id="238c81f4-cdd5-81f5-b360-ef59117c0ff3"><td class="cell-title"><a href="https://www.notion.so/Project-1-UX-UI-238c81f4cdd581f5b360ef59117c0ff3?pvs=21">Project 1 UX/UI</a></td><td class="cell-[:fq"><div class="checkbox checkbox-on"></div></td><td class="cell-DmC\"></td><td class="cell-o=j&gt;"><span class="selected-value select-value-color-green">2025</span><span class="selected-value select-value-color-blue">Figma</span><span class="selected-value select-value-color-purple">Redesign</span><span class="selected-value select-value-color-red">Web</span></td><td class="cell-S]gz"><span class="selected-value select-value-color-gray">Printing</span></td></tr><tr id="23bc81f4-cdd5-808d-839a-d0d1fd4d51a6"><td class="cell-title"><a href="https://www.notion.so/Blogs-for-PulseGuard-1-23bc81f4cdd5808d839ad0d1fd4d51a6?pvs=21">Blogs for PulseGuard (1)</a></td><td class="cell-[:fq"><div class="checkbox checkbox-on"></div></td><td class="cell-DmC\"></td><td class="cell-o=j&gt;"><span class="selected-value select-value-color-green">2025</span><span class="selected-value select-value-color-blue">Figma</span><span class="selected-value select-value-color-purple">Redesign</span><span class="selected-value select-value-color-red">Web</span></td><td class="cell-S]gz"><span class="selected-value select-value-color-gray">Arts</span></td></tr></tbody></table><br/><br/></div><p id="238c81f4-cdd5-81ce-a952-d5dbed298a59" class="">
+</p></div></div><hr id="238c81f4-cdd5-81f8-936a-f4660977cc84"/><p id="238c81f4-cdd5-817a-8f1c-da0ee8f15810" class="">
+</p><div id="238c81f4-cdd5-8119-be1c-c4a68036d257" class="collection-content"><h4 class="collection-title">Projects</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><div data-testid="/icons/font_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/font_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/font_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Name</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>Избранное</th><th><span class="icon property-icon"><div data-testid="/icons/description_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/description_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/description_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Описание</th><th><span class="icon property-icon"><div data-testid="/icons/list_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/list_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/list_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Теги</th><th><span class="icon property-icon"><div data-testid="/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/arrow-circle-down_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/arrow-circle-down_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Тип</th></tr></thead><tbody><tr id="238c81f4-cdd5-8141-80ee-fae4022df78b"><td class="cell-title"><a href="https://www.notion.so/HydroFlaskPro-238c81f4cdd5814180eefae4022df78b?pvs=21">HydroFlaskPro</a></td><td class="cell-[:fq"><div class="checkbox checkbox-on"></div></td><td class="cell-DmC\"></td><td class="cell-o=j&gt;"></td><td class="cell-S]gz"><span class="selected-value select-value-color-gray">Motion</span></td></tr><tr id="238c81f4-cdd5-8165-9440-c891af74c9be"><td class="cell-title"><a href="https://www.notion.so/PulseGuard-238c81f4cdd581659440c891af74c9be?pvs=21">PulseGuard</a></td><td class="cell-[:fq"><div class="checkbox checkbox-on"></div></td><td class="cell-DmC\"></td><td class="cell-o=j&gt;"></td><td class="cell-S]gz"><span class="selected-value select-value-color-gray">Motion</span></td></tr></tbody></table><br/><br/></div><p id="238c81f4-cdd5-81bc-acd3-d7a8a7b3f56d" class="">
+</p><p id="238c81f4-cdd5-810e-91a9-d9f712e341ba" class="">
+</p><hr id="238c81f4-cdd5-814a-b83b-c0b61a01e8c5"/><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="238c81f4-cdd5-817f-8e9c-c04ba04908b1"><div style="font-size:1.5em"><span class="icon">📞</span></div><div style="width:100%"><p id="238c81f4-cdd5-81c7-9cc4-c2e0190e7f54" class="">Contrast </p></div></figure><div id="238c81f4-cdd5-8138-b688-cb8242f50abf" class="column-list"><div id="238c81f4-cdd5-8082-b98e-e6046c6be09f" style="width:25.000000000000018%" class="column"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="238c81f4-cdd5-8008-ad92-eb081a77c76f"><div style="width:100%"><a href="https://paypal.me/hamza092">PayPal</a></div></figure></div><div id="238c81f4-cdd5-805e-97bd-e48b5ac16951" style="width:25.000000000000018%" class="column"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="238c81f4-cdd5-809c-ae9d-eca255b27990"><div style="font-size:1.5em"><img class="icon" src="https://cdn3.iconfinder.com/data/icons/inficons/512/linkedin.png"/></div><div style="width:100%"><a href="http://www.linkedin.com/in/hamza-sabri-93387933b">LinkedIn</a></div></figure></div><div id="238c81f4-cdd5-8081-be76-f45152780138" style="width:25.000000000000018%" class="column"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="238c81f4-cdd5-80be-96f1-d9a49755e41b"><div style="font-size:1.5em"><span class="icon">✉️</span></div><div style="width:100%"><a href="mailto:hamzaanasps092@gmail.com">Email</a></div></figure></div><div id="238c81f4-cdd5-80ce-b653-fcd774f4aedd" style="width:25.000000000000007%" class="column"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="238c81f4-cdd5-81a9-93bc-c9414876bac0"><div style="width:100%"><a href="https://www.instagram.com/">Instagram</a></div></figure></div></div><hr id="238c81f4-cdd5-8109-91c6-f0e6bfab5bc4"/><p id="238c81f4-cdd5-8141-8306-e84c3922d33b" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
